@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int num, num2;
+	int num1, num2;
 	/* ASCII code for 0*/
 	num1 = 48;
 
