@@ -8,7 +8,9 @@
  */
 void fibonacci(int n)
 {
-	long int f1 = 1, f2 = 2, 1, next;
+	int f1 = 1;
+	int f2 = 2, 1;
+	next;
 
 	if (n < 1)
 	{
