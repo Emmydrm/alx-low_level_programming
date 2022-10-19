@@ -26,14 +26,16 @@ void print_times_table(int n)
 				{
 					_putchar(result + '0');
 					_putchar('\n');
-				} else
+				}
+				else
 				{
 					if (j == n - 1)
 					{
 						_putchar((result / 10) + '0');
 						_putchar((result % 10) + '0');
 						_putchar('\n');
-					} else
+					}
+					else
 					{
 						_putchar((result / 10) + '0');
 						_putchar((result % 10) + '0');
