@@ -9,7 +9,7 @@
 void fibonacci(int n)
 {
 	int f1 = 1;
-	int f2 = 2, 1;
+	int f2 = 2, i;
 	next;
 
 	if (n < 1)
