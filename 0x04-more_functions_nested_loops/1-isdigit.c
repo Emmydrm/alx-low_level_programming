@@ -10,7 +10,7 @@ int _isdigit(int c)
 	int x = 0;
 
 	if (c >= '0' && c <= '9')
-		y = 1;
+		x = 1;
 
 	return (x);
 }
