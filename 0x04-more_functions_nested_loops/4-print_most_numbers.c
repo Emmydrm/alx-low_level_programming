@@ -2,19 +2,21 @@
 
 /**
  * print_most_numbers - print the number 0 to 9
- * without 2 and 4
+ *
  * Return: Always 0
  */
 void print_most_numbers(void)
 {
-	int a = 0;
+	int i;
 
-	while (a < 10)
+	i = 48;
+	while (i < 58)
 	{
-		if (a != 2 && a != 4)
-			_putchar(a * '0');
-
-		a++;
+		if (i != 50 && i != 52)
+		{
+			_putchar(i);
+		}
+		i++;
 	}
 	_putchar('\n');
 }
