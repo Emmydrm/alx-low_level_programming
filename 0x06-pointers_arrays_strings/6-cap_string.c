@@ -5,6 +5,7 @@
  * @str: string
  * Return: pointer to string
  */
+
 char *cap_string(char *s)
 {
 	int count = 0, i;
