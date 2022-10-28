@@ -5,7 +5,7 @@
  * @str: string to be encoded
  * Return: str
  */
-char *rot13(char *Str)
+char *rot13(char *str)
 {
 	int count = 0, i;
 	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
