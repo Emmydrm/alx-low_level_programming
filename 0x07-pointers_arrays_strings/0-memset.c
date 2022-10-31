@@ -13,11 +13,16 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int index;
-	unsigned char *memory = s, value = b;
+	/* declear variables, i to count n, j to index s */
+	unsigned int i;
+	int j;
 
-	for (index = 0; index < n; index++)
-		memory[index] = value;
+	j = 0;
 
-	return (memory);
+	for (i = 0; i < n; i++)
+	{
+		s[j] = b;
+		j++;
+	}
+	return (s);
 }
