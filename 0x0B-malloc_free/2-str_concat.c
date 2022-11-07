@@ -35,6 +35,13 @@ char *str_concat(char *s1, char *s2)
 		j++;
 		i++;
 	}
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		buffer[j] = s2[i];
+		j++;
+		i++;
+	}
 	buffer[j] = '\0';
 	return (buffer);
 }
