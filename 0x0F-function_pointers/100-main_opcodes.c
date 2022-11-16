@@ -5,7 +5,7 @@
  * main - prints its own opcodes
  * @argc: number of arguments
  * @argv: array of arguement
- * Return: always 0
+ * Return: always 0 (success)
  */
 int main(int argc, char *argv[])
 {
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			printf("%02hhx\n", arr[i]);
 			break;
 		}
-		printf("%02hhx", arr[1]);
+		printf("%02hhx", arr[i]);
 	}
 	return (0);
 }
