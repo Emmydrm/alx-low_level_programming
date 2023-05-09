@@ -1,64 +1,45 @@
+#include <stdio.h>
 #include "search_algos.h"
 
 /**
- * print_array - prints an array
- * @array: array of integers
- * @start: starting index
- * @end: end index
-*/
-void print_array(int *array, int start, int end)
+ * print_array - Prints an array of integers
+ * @array: A pointer to the first element of the array to print
+ * @size: The size of the array
+ */
+void print_array(int *array, size_t size)
 {
-	int i;
-
-	printf("Searching in array: ");
-	for (i = start; i < end; i++)
-		printf("%d, ", array[i]);
-	printf("%d\n", array[i]);
+	printf("Searching in array: %d", array[0]);
+	for (size_t i = 1; i < size; i++)
+		printf(", %d", array[i]);
+	printf("\n");
 }
 
 /**
- * binary_algo - binary search algorithm
- * @array: array of integers
- * @value: value to be searched
- * @start: start index
- * @end: end index
- * Return: value if found, else -1
-*/
-int binary_algo(int *array, int value, int start, int end)
-{
-	int middle, ret;
-
-	if (start > end)
-		return (-1);
-
-	print_array(array, start, end);
-	if (array[start] == value)
-		return (start);
-	middle = ((end - start) / 2) + start;
-
-	/* Go left */
-	if (array[middle] >= value)
-		ret = binary_algo(array, value, start, middle);
-	/* Go right */
-	if (array[middle] < value)
-		ret = binary_algo(array, value, middle + 1, end);
-
-	if (ret == -1 && array[middle] == value)
-		return (middle);
-	return (ret);
-}
-
-/**
- * advanced_binary - Advanced bbinary search algorithm
- * @array: array of integers
- * @size: size of the array
- * @value: value to search for
- * Return: index of the first element of the array found
-*/
+ * advanced_binary - Searches for a value in a sorted array of integers
+ * @array: A pointer to the first element of the array to search in
+ * @size: The number of elements in the array
+ * @value: The value to search for
+ *
+ * Return: The index where the value is located, or -1 if it is not found
+ */
 int advanced_binary(int *array, size_t size, int value)
 {
-	if (array == NULL || size < 1)
+	if (array == NULL || size == 0)
 		return (-1);
 
-	return (binary_algo(array, value, 0, size - 1));
+	print_array(array, size);
+
+	if (size == 1)
+		return (array[0] == value ? 0 : -1);
+
+	size_t mid = (size - 1) / 2;
+	if (array[mid] == value) {
+		if (mid > 0 && array[mid - 1] == value)
+			return (advanced_binary(array, mid + 1, value));
+		return (mid);
+	}
+	else if (array[mid] < value)
+		return (advanced_binary(array + mid + 1, size - mid - 1, value) + mid + 1);
+	else
+		return (advanced_binary(array, mid + 1, value));
 }
