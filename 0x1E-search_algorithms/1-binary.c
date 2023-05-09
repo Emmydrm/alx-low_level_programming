@@ -38,13 +38,21 @@ int binary_search(int *array, size_t size, int value)
 	return (-1);
 }
 
-int main(void)
+/**
+ *print_array - prints an array
+ *@array: array to print
+ *@left: start index for print
+ *@right: end index for print
+ *Return: void
+ */
+void print_array(int *array, size_t left, size_t right)
 {
-    int array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    size_t size = sizeof(array) / sizeof(array[0]);
-
-    printf("Found %d at index: %d\n", 2, binary_search(array, size, 2));
-    printf("Found %d at index: %d\n", 5, binary_search(array, 5, 5));
-    printf("Found %d at index: %d\n", 999, binary_search(array, size, 999));
-    return (0);
+	while (left <= right)
+	{
+		printf("%d", array[left]);
+		if (left != right)
+			printf(", ");
+		left++;
+	}
+	printf("\n");
 }
